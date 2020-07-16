@@ -1,0 +1,55 @@
+$headerColor: #e9eff1;
+$selectedColor: #d7ecef;
+$borderDark: #c9c9c9;
+$borderLight: #d7ecef;
+
+.pagination-container {
+  display: flex;
+  
+  height: 30px;
+  background: $headerColor;
+
+  .pagination, .perpage {
+    height: 30px;
+  }
+  .pagination--button {
+    display: inline-block;
+    width: 25px;
+    height: 30px;
+
+    text-align: center;
+    color: #000;
+  }
+
+  span {
+    display: inline-block;
+    height: 30px;
+
+    vertical-align: 0.030em;
+  }
+
+  input {
+    width: 30px;
+    height: 26px;
+    display: inline-block;
+    margin: 1px 10px;
+    border: 1px solid $borderDark;
+    box-sizing: 0;
+    text-align: center;
+  }
+
+  .divider {
+    background: $borderDark;
+    margin: 0 15px;
+    width: 2px;
+    height: 30px;
+  }
+
+  select {
+    display: inline-block;
+    height: 26px;
+    margin: 1px 10px 1px 0;
+    border: 1px solid $borderDark;
+    box-sizing: 0;
+  }
+}

@@ -34,7 +34,7 @@ export const SideMenu = (props:Props) => {
           }}
         >
           <FontAwesomeIcon color="#d7ecef" icon={item.icon} />
-          <span>{item.label} from werlangui</span>
+          <span>{item.label}</span>
         </button>
       ))}
       

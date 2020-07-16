@@ -1,0 +1,148 @@
+$color1: rgba(13, 31, 45, 1);
+$color2: rgba(196, 187, 184, 1);
+$color3: rgba(245, 176, 203, 1);
+$color4: rgba(220, 106, 207, 1);
+$color5: rgba(116, 92, 151, 1);
+
+
+$headerColor: #e9eff1;
+$selectedColor: #d7ecef;
+$borderDark: #c9c9c9;
+$borderLight: #d7ecef;
+
+
+.datagrid {
+  position: relative;
+  top: 0; right: 0; left: 0; bottom: 0;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+  padding-top: 30px;
+
+
+  .datagrid--footer {
+    display: flex;
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 30px;
+    padding: 10px 0;
+    background: $headerColor;
+    border-top: 1px solid $borderDark;
+
+
+    span {
+      display: inline-block;
+      height: 30px;
+
+      vertical-align: 0.030em;
+    }
+
+    .divider {
+      background: $borderDark;
+      margin: 0 15px;
+      width: 2px;
+      height: 30px;
+    }
+  }
+
+
+  .datagrid--column {
+    
+
+    .datagrid--cell {
+      height: 35px;
+      border-right: 1px solid $borderLight;
+      padding: 5px;
+      box-sizing: border-box;
+      //border-bottom: 1px solid $borderDark;
+      text-overflow: ellipsis;
+      overflow: hidden; 
+      white-space: nowrap;
+      line-height: 25px;
+    }
+
+    .datagrid--cell:nth-child(even):not(.datagrid--row-selected) {
+      background: #efefef;
+    }
+
+    .datagrid--row-selected {
+      background: $selectedColor;
+      border-top: 1px solid $borderDark;
+      border-bottom: 1px solid $borderDark;
+    }
+ 
+  }
+
+} 
+
+.datagrid .datagrid--header {
+  display: flex;
+  position: absolute; 
+  top: 0; left: 0; right: 0;
+  height: 40px;
+  background:$headerColor;
+  font-weight: bold;
+
+  .datagrid--cell {
+    position: relative;
+    height: 40px;
+    border-right: 1px solid $borderDark;
+    padding: 5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $borderDark;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+    line-height: 30px;
+  }
+
+  .datagrid--left {
+    background: $headerColor;
+    border-right: 1px solid $borderDark;
+  }
+}
+
+.datagrid .datagrid--body {
+  display: flex;
+  position: absolute;
+  top: 40px; left: 0; right: 0; bottom: 50px;
+  overflow-y: scroll;
+}
+
+
+
+
+.datagrid--resizer {
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 40px;
+  box-sizing: border-box;
+  border-right: 1px solid $borderDark;
+  
+}
+
+.datagrid--resizer:hover {
+  cursor: col-resize;
+  border-right: 2px solid $borderDark;
+  background:$borderDark
+}
+
+.datagrid--left {
+  width: 40px;
+  background: $headerColor;
+  text-align: center;
+  border-right: 1px solid $borderDark;
+  border-bottom: 1px solid $borderDark;
+  box-sizing: border-box;
+}
+
+.datagrid--resizing {
+  user-select: none;
+  cursor: col-resize;
+}
+
+
+.datagrid input {
+  margin: 0;
+}

@@ -4,6 +4,10 @@
   "description": "A simple UI framework for React",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WernerLDev/WerlangUI.git"
+  },
   "scripts": {
     "build": "tsc && npm run copycss",
     "copycss": "copyfiles -u 1 src/**/*.scss dist/",
@@ -13,12 +17,13 @@
     "dist"
   ],
   "author": "Werner",
-  "license": "ISC",
+  "license": "LGPL2",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@types/react": "^16.9.43",
+    "immutable": "^4.0.0-rc.12",
     "react": "^16.13.1"
   },
   "peerDependencies": {
@@ -26,7 +31,8 @@
     "@fortawesome/free-solid-svg-icons": ">=5.14.0",
     "@fortawesome/react-fontawesome": ">=0.1.11",
     "@types/react": ">=16.0.0",
-    "react": ">=16.0.0"
+    "react": ">=16.0.0",
+    "immutable": ">=4.0.0"
   },
   "devDependencies": {
     "copyfiles": "^2.3.0",

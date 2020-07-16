@@ -1,0 +1,33 @@
+{
+  "name": "werlangui",
+  "version": "1.0.0",
+  "description": "A simple UI framework for React",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Werner",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@types/react": "^16.9.43",
+    "react": "^16.13.1"
+  },
+  "peerDependencies": {
+    "@fortawesome/fontawesome-svg-core": ">=1.2.30",
+    "@fortawesome/free-solid-svg-icons": ">=5.14.0",
+    "@fortawesome/react-fontawesome": ">=0.1.11",
+    "@types/react": ">=16.0.0",
+    "react": ">=16.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.6"
+  }
+}

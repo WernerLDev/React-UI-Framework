@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretSquareRight } from '@fortawesome/free-regular-svg-icons'
+import { faCaretSquareDown } from '@fortawesome/free-solid-svg-icons'
 import "./treepane.scss";
 import { useState } from 'react';
 
@@ -26,10 +28,10 @@ export const TreeRow = (
     style={{paddingLeft: `${props.depth * 15}px`}}
   >
 
-    <div className="carrot">
+    <div className="caret">
       {props.hasChildren && 
         <button onClick={() => props.onExpand(!props.expanded) }>
-        <FontAwesomeIcon color="#a9a9a9" icon={props.expanded ? "caret-down" : "caret-right"} />
+        <FontAwesomeIcon color="#a9a9a9" icon={props.expanded ? faCaretSquareDown : faCaretSquareRight} />
         </button>
       }
     </div> 

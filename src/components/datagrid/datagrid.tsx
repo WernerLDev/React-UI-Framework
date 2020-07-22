@@ -32,6 +32,7 @@ export interface IDataGridState {
 export class DataGrid<T> extends React.Component<IDataGridProps<T>, IDataGridState> {
 
   container:HTMLDivElement | null = null;
+  tblheader:HTMLDivElement | null = null;
 
   constructor(props:IDataGridProps<T>) {
     super(props)
@@ -86,6 +87,11 @@ export class DataGrid<T> extends React.Component<IDataGridProps<T>, IDataGridSta
     }
   }
 
+  onScroll = (e:React.UIEvent<HTMLDivElement, UIEvent>) => {
+    if(this.tblheader != null)
+      this.tblheader.scrollLeft = e.currentTarget.scrollLeft
+  }
+
   renderSort(column:DataColumn<T>) {
     const { sort } = this.props;
     return (
@@ -135,8 +141,7 @@ export class DataGrid<T> extends React.Component<IDataGridProps<T>, IDataGridSta
 
     return (
       <div ref={(ref) => this.container = ref} className="datagrid">
-        <div className="datagrid--header">
-          {/* <div className="datagrid--cell datagrid--left"></div> */}
+        <div ref={(ref) => this.tblheader = ref} className="datagrid--header">
           {columns.map((column, index) => {
             let width = this.state.widths.get(index)
             
@@ -146,7 +151,7 @@ export class DataGrid<T> extends React.Component<IDataGridProps<T>, IDataGridSta
                 id={`datagridhead-${index}`}
                 style={{
                   width: width == "auto" ? "auto" : `${width}px`,
-                  minWidth: width == "auto" ? undefined : `${width}px`,
+                  minWidth: width == "auto" ? "150px" : `${width}px`,
                   flexGrow: width == "auto" ? 1 : undefined
                 }}
                 className={`datagrid--cell ${column.width == "fixed" ? "datagrid--left" : ""}`}
@@ -178,7 +183,10 @@ export class DataGrid<T> extends React.Component<IDataGridProps<T>, IDataGridSta
           })}
         </div>
 
-        <div className="datagrid--body">
+        <div 
+          onScroll={this.onScroll}
+          className="datagrid--body"
+        >
           {columns.map((col, colindex) => {
             let width = this.state.widths.get(colindex)
 

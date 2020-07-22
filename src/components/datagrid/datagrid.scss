@@ -82,6 +82,7 @@ $borderLight: #d7ecef;
   height: 40px;
   background:$headerColor;
   font-weight: bold;
+  overflow: hidden;
 
   .datagrid--cell {
     position: relative;
@@ -99,6 +100,7 @@ $borderLight: #d7ecef;
   .datagrid--left {
     background: $headerColor;
     border-right: 1px solid $borderDark;
+    min-width: 40px;
   }
 }
 

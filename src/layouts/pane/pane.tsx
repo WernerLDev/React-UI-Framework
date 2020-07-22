@@ -1,5 +1,4 @@
 import * as React from 'react'
-import './pane.scss'
 
 export const Pane = (
     props: {

@@ -8,6 +8,7 @@ import { useState } from 'react';
 export type TreePaneData = {
   key:string,
   label: string | JSX.Element,
+  expanded?:boolean,
   children?:TreePaneData[]
 }
 
@@ -48,10 +49,11 @@ export const SubTree = (
     tree:TreePaneData,
     depth:number,
     selected: string,
+    expanded?:boolean,
     onSelect: (key:string) => void
   }
 ) => {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(props.expanded != null ? props.expanded : true);
 
   return (
     <>
@@ -71,6 +73,7 @@ export const SubTree = (
               key={`tree-${childTree.key}`} 
               tree={childTree} depth={props.depth + 1}
               selected={props.selected}
+              expanded={childTree.expanded}
               onSelect={(v) => props.onSelect(v)}
             />
           ))}
@@ -81,7 +84,7 @@ export const SubTree = (
 }
 
 export const TreePane = (props:{data:TreePaneData[]}) => {
-  const [selected, setSelected] = useState('Test2');
+  const [selected, setSelected] = useState('');
 
   return (
     <div className="treepane">
@@ -91,6 +94,7 @@ export const TreePane = (props:{data:TreePaneData[]}) => {
           key={`tree-${tree.key}`} 
           tree={tree} depth={0}
           selected={selected}
+          expanded={tree.expanded}
           onSelect={(v) => setSelected(v)}
         />
       ))}

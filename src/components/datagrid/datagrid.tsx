@@ -67,7 +67,9 @@ export class DataGrid<T> extends React.Component<IDataGridProps<T>, IDataGridSta
           return a + b;
         }, 0)
 
-      let newSize = e.clientX - rect.left;
+      const scrollLeft = this.tblheader?.scrollLeft ?? 0;
+
+      let newSize = e.clientX + scrollLeft - rect.left;
       newSize -= prewidth
       if(newSize < 70) newSize = 70;
       this.setState({

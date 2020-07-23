@@ -91,7 +91,31 @@
 }
 
 div.submenu-container {
+    border: 1px solid #c9c9c9;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.18);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.18);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.18);
+
     .menubar {
         padding: 0;
+
+        button.small, button.big {
+            background: #efefef;
+            border: 0;
+            height: 30px;
+            line-height: 30px;
+            .svg-inline--fa {
+                color: #57b7d1;
+                height: 30px;
+            }
+            span {
+                color: #000;
+            }
+        }
+
+        button:not(.disabled):hover {
+            cursor: pointer;
+            background: #d7ecef;
+        }
     }
 }

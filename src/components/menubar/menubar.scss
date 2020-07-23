@@ -1,0 +1,74 @@
+.menubar {
+    padding: 5px;
+    box-sizing: border-box;
+
+    div.menubar-container {
+        display: flex;
+        //border: 1px solid #fff;
+        //background: #cce1e4;
+
+        
+
+        button {
+            display: flex;
+            width: auto;
+            
+            background: #12a6ce;
+            border: 0;
+            border-right: 1px solid #57b7d1;
+            padding: 0 8px;
+            margin: 0 5px 0 0;
+            font-size: 1.4em;
+            user-select: none;
+            outline:0;
+    
+            .svg-inline--fa {
+              
+                margin: 0 3px;
+            }
+        
+            span {
+              display: block;
+              margin: 0 2px 0 10px;
+              font-size: 0.6em;
+              color: #fff;
+            }
+        }
+
+        button.small {
+            height: 40px;
+            line-height: 40px;
+            .svg-inline--fa { 
+                height: 40px;
+            }
+        }
+
+        button.big {
+            height: 60px;
+            line-height: 60px;
+            padding: 0 15px;
+            .svg-inline--fa { 
+                height: 60px;
+            }
+        }
+
+        button.active {
+            border-left: 4px solid #d7ecef;
+            background: #57b7d1;
+        }
+
+        button.disabled {
+            opacity: 0.4;
+        }
+    
+        button:not(.disabled):hover {
+            cursor: pointer;
+            background: #57b7d1;
+        }
+
+        button.menubar-submenu-btn {
+            margin-left: -4px;
+            padding: 0 2px;
+        }
+    }
+}

@@ -5,7 +5,8 @@ export const Pane = (
         width?: number,
         height?: number,
         background?: string,
-        overflow?: "auto" | "scroll" | "hidden"
+        overflow?: "auto" | "scroll" | "hidden",
+        className?: string,
         children:React.ReactNode
     }
 ) => {
@@ -22,7 +23,7 @@ export const Pane = (
         overflow: props.overflow ?? "hidden"
     }
     return (
-        <div style={style} className="pane">
+        <div style={style} className={`pane ${props.className}`}>
             {props.children}    
         </div>
     )

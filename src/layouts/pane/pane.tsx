@@ -6,6 +6,7 @@ export const Pane = (
         height?: number,
         background?: string,
         overflow?: "auto" | "scroll" | "hidden" | "initial",
+        padding?:number,
         className?: string,
         children:React.ReactNode
     }
@@ -20,10 +21,11 @@ export const Pane = (
         background: props.background,
         borderBottom: props.height ? "1px solid #c9c9c9" : undefined,
         borderRight: props.width ? "1px solid #c9c9c9" : undefined,
-        overflow: props.overflow ?? "hidden"
+        overflow: props.overflow ?? "hidden",
+        padding: props.padding ? `${props.padding}.px` : undefined
     }
     return (
-        <div style={style} className={`pane ${props.className}`}>
+        <div style={style} className={`pane ${props.className ?? ''}`}>
             {props.children}    
         </div>
     )

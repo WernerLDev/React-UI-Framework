@@ -17,8 +17,7 @@
                 left: 0;
                 z-index: 999;
                 width: 200px;
-                height: 200px;
-                background: #ff00ff;
+                height: auto;
             }
 
         }
@@ -80,9 +79,19 @@
             background: #57b7d1;
         }
 
-        button.menubar-submenu-btn {
-            margin-left: -4px;
-            padding: 0 2px;
+    }
+
+    div.menubar-vertical {
+
+        button {
+            width: 100%;
+            margin: 0 0 1px 0;
         }
+    }
+}
+
+div.submenu-container {
+    .menubar {
+        padding: 0;
     }
 }

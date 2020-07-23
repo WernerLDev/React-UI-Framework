@@ -25,9 +25,14 @@ export const Menubar = ({ direction, size, items }: IMenubarProps) => {
     size == "small" ? 50 : size == "big" ? 70 : 50;
 
   return (
-    <Pane height={height} background="#d7ecef" className="menubar" overflow="initial">
+    <Pane 
+      height={direction == "horizontal" ? height : undefined} 
+      background="#d7ecef" 
+      className="menubar" 
+      overflow="initial"
+    >
       <div 
-        className="menubar-container"
+        className={`menubar-container menubar-${direction}`}
         style={{
           flexDirection: direction == "horizontal" ? "row" : "column"
         }}

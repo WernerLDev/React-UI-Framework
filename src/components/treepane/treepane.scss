@@ -2,6 +2,7 @@
 .treepane {
   flex-grow: 1;
   align-self: stretch;
+  overflow: auto;
 
   .treeitem {
     display: flex;

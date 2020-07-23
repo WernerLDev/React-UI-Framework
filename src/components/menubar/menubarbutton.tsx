@@ -5,10 +5,11 @@ import { ClickOutside } from '../../layouts/clickoutside/clickoutside';
 
 export interface IMenuBarButtonProps {
     size: "small" | "big",
+    direction: "horizontal" | "vertical"
     item: MenubarItem
 }
 
-export const MenuBarButton = ( {size, item}: IMenuBarButtonProps ) => {
+export const MenuBarButton = ( {size, direction, item}: IMenuBarButtonProps ) => {
     
     const [submenuVisible, setSubmenuvisible] = React.useState(false);
 
@@ -28,7 +29,7 @@ export const MenuBarButton = ( {size, item}: IMenuBarButtonProps ) => {
             <FontAwesomeIcon color="#d7ecef" size="xs" icon={item.icon} />
             {item.label && <span>{item.label}</span>}
             {item.submenu && (
-                <FontAwesomeIcon color="#d7ecef" size="xs" icon="caret-down" />
+                <FontAwesomeIcon color="#d7ecef" size="xs" icon={direction == "horizontal" ? "caret-down" : "caret-right"} />
             )}
             </button>
             {submenuVisible && 

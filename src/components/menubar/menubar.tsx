@@ -40,6 +40,7 @@ export const Menubar = ({ direction, size, items }: IMenubarProps) => {
         {items.map((item, index) => (
           <MenuBarButton
             key={`menuitem${index}`}
+            direction={direction}
             size={size}
             item={item}
           />

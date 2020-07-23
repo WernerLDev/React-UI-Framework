@@ -86,7 +86,26 @@
         button {
             width: 100%;
             margin: 0 0 1px 0;
+            span {
+                text-align: left;
+                flex-grow: 1;
+            }
         }
+
+        .button-wrapper {
+
+            .submenu-container {
+                position: absolute;
+                top: 2px;
+                left: 99%;
+                z-index: 999;
+                width: 200px;
+                height: auto;
+            }
+
+        }
+
+
     }
 }
 

@@ -1,6 +1,7 @@
 .splitpane-container {
   display: flex;
   height: 100%; width: 100%;
+  overflow: hidden;
   
   .splitpane-pane1 {
     align-self: stretch;
@@ -28,5 +29,6 @@
   .splitpane-pane2 {
     align-self: stretch;
     flex-grow: 1;
+    overflow: auto;
   }
 }

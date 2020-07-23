@@ -5,7 +5,7 @@ export const Pane = (
         width?: number,
         height?: number,
         background?: string,
-        overflow?: "auto" | "scroll" | "hidden",
+        overflow?: "auto" | "scroll" | "hidden" | "initial",
         className?: string,
         children:React.ReactNode
     }

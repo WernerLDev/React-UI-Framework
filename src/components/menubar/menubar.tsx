@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Pane } from "../../layouts";
 
 import "./menubar.scss";
+import { MenuBarButton } from "./menubarbutton";
 
 export type MenubarItem = {
   icon: IconProp;
@@ -24,7 +25,7 @@ export const Menubar = ({ direction, size, items }: IMenubarProps) => {
     size == "small" ? 50 : size == "big" ? 70 : 50;
 
   return (
-    <Pane height={height} background="#d7ecef" className="menubar">
+    <Pane height={height} background="#d7ecef" className="menubar" overflow="initial">
       <div 
         className="menubar-container"
         style={{
@@ -32,21 +33,11 @@ export const Menubar = ({ direction, size, items }: IMenubarProps) => {
         }}
       >
         {items.map((item, index) => (
-          <>
-            <button
-              key={`menuitem${index}`}
-              className={`menubar-btn ${size} ${item.disabled ? "disabled" : ""}`}
-              onClick={() => item.onClick()}
-            >
-              <FontAwesomeIcon color="#d7ecef" size="xs" icon={item.icon} />
-              {item.label && <span>{item.label}</span>}
-            </button>
-            {item.submenu && (
-              <button className={`menubar-submenu-btn ${size}`}>
-                <FontAwesomeIcon color="#d7ecef" size="xs" icon="caret-down" />
-              </button>
-            )}
-          </>
+          <MenuBarButton
+            key={`menuitem${index}`}
+            size={size}
+            item={item}
+          />
         ))}
       </div>
     </Pane>

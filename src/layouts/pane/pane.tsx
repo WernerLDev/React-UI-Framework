@@ -5,6 +5,7 @@ export const Pane = (
         width?: number,
         height?: number,
         background?: string,
+        overflow?: "auto" | "scroll" | "hidden"
         children:React.ReactNode
     }
 ) => {
@@ -17,7 +18,8 @@ export const Pane = (
         alignSelf: props.width == null && props.height == null ? 'stretch' : undefined,
         background: props.background,
         borderBottom: props.height ? "1px solid #c9c9c9" : undefined,
-        borderRight: props.width ? "1px solid #c9c9c9" : undefined
+        borderRight: props.width ? "1px solid #c9c9c9" : undefined,
+        overflow: props.overflow ?? "hidden"
     }
     return (
         <div style={style} className="pane">

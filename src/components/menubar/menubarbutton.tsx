@@ -2,6 +2,7 @@ import * as React from 'react';
 import { MenubarItem, Menubar } from './menubar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ClickOutside } from '../../layouts/clickoutside/clickoutside';
+import { Menu } from './menu';
 
 export interface IMenuBarButtonProps {
     size: "small" | "big",
@@ -25,7 +26,7 @@ export const MenuBarButton = ( {size, direction, item}: IMenuBarButtonProps ) =>
                         item.onClick()
                     }
                 }}
-                >
+            >
             <FontAwesomeIcon color="#d7ecef" size="xs" icon={item.icon} />
             {item.label && <span>{item.label}</span>}
             {item.submenu && (
@@ -34,7 +35,11 @@ export const MenuBarButton = ( {size, direction, item}: IMenuBarButtonProps ) =>
             </button>
             {submenuVisible && 
                 <div className="submenu-container">
-                    <ClickOutside
+                    <Menu 
+                        items={item.submenu ?? []}
+                        onClose={() => setSubmenuvisible(false)}
+                    />
+                    {/* <ClickOutside
                         onClickOutside={() => setSubmenuvisible(false)}
                     >
                         <Menubar 
@@ -42,7 +47,7 @@ export const MenuBarButton = ( {size, direction, item}: IMenuBarButtonProps ) =>
                             size="small"
                             items={item.submenu ?? []}
                         />
-                    </ClickOutside>
+                    </ClickOutside> */}
                 </div>
             }
             

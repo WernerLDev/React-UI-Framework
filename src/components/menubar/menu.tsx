@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 import './menu.scss'
+import { MenuButton } from "./menubutton";
 
 export interface IMenuProps {
   items: MenubarItem[];
@@ -13,38 +14,11 @@ export interface IMenuProps {
 
 export const Menu = ({ items, onClose }: IMenuProps) => {
 
-  const [submenuopen, setSubmenuopen] = useState(false);
-
   return (
     <div className="menu-container">
       <ClickOutside onClickOutside={onClose}>
         {items.map((item, index) => (
-          <div key={`menuitem${index}`} className="button-container">
-            <button
-              onClick={() => {
-                if(item.submenu) setSubmenuopen(!submenuopen)
-                else item.onClick()
-              }}
-            >
-              <FontAwesomeIcon color="#57b7d1" size="xs" icon={item.icon} />
-              {item.label && <span>{item.label}</span>}
-              {item.submenu && (
-                <FontAwesomeIcon
-                  color="#a9a9a9"
-                  size="xs"
-                  icon={"caret-right"}
-                />
-              )}
-            </button>
-            {item.submenu && submenuopen && 
-              <div className="submenu">
-                <Menu 
-                  items={item.submenu}
-                  onClose={() => setSubmenuopen(false)}
-                />
-              </div>
-            }
-          </div>
+          <MenuButton key={`menuitem${index}`} item={item} />
         ))}
       </ClickOutside>
     </div>

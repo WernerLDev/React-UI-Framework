@@ -39,15 +39,6 @@ export const MenuBarButton = ( {size, direction, item}: IMenuBarButtonProps ) =>
                         items={item.submenu ?? []}
                         onClose={() => setSubmenuvisible(false)}
                     />
-                    {/* <ClickOutside
-                        onClickOutside={() => setSubmenuvisible(false)}
-                    >
-                        <Menubar 
-                            direction="vertical"
-                            size="small"
-                            items={item.submenu ?? []}
-                        />
-                    </ClickOutside> */}
                 </div>
             }
             

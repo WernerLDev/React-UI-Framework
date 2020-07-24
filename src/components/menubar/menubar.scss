@@ -53,6 +53,7 @@
         button.small {
             height: 40px;
             line-height: 40px;
+            min-width: 40px;
             .svg-inline--fa { 
                 height: 40px;
             }
@@ -61,6 +62,7 @@
         button.big {
             height: 60px;
             line-height: 60px;
+            min-width: 60px;
             padding: 0 15px;
             .svg-inline--fa { 
                 height: 60px;

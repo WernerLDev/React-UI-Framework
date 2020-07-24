@@ -26,11 +26,11 @@ export const Menu = ({ items, onClose }: IMenuProps) => {
                 else item.onClick()
               }}
             >
-              <FontAwesomeIcon color="#d7ecef" size="xs" icon={item.icon} />
+              <FontAwesomeIcon color="#57b7d1" size="xs" icon={item.icon} />
               {item.label && <span>{item.label}</span>}
               {item.submenu && (
                 <FontAwesomeIcon
-                  color="#d7ecef"
+                  color="#a9a9a9"
                   size="xs"
                   icon={"caret-right"}
                 />

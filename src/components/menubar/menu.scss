@@ -1,6 +1,7 @@
 
 .menu-container {
     border: 1px solid #c9c9c9;
+    border-radius: 3px;
     -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.18);
     -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.18);
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.18);
@@ -35,7 +36,6 @@
     
            
             .svg-inline--fa {
-                color: #57b7d1;
                 height: 30px;
                 margin: 0 3px;
             }

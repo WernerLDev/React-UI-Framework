@@ -21,7 +21,9 @@ export const TreeRow = (
     onExpand: (expanded:boolean) => void,
     hasChildren:boolean,
     selected: boolean,
-    onClick: () => void
+    onClick: () => void,
+    onContextMenu?:(clientX:number, clientY:number) => void,
+    onDoubleClick?:() => void
   }
 ) => (
   <div 
@@ -39,6 +41,13 @@ export const TreeRow = (
     <div 
       className="label"
       onClick={() => props.onClick()}
+      onContextMenu={(e) => {
+        if(props.onContextMenu) {
+          e.preventDefault();
+          props.onContextMenu(e.clientX, e.clientY);
+        }
+      }}
+      onDoubleClick={() => props.onDoubleClick ? props.onDoubleClick() : null}
     >{props.label}</div>
 
   </div>
@@ -50,7 +59,9 @@ export const SubTree = (
     depth:number,
     selected: string,
     expanded?:boolean,
-    onSelect: (key:string) => void
+    onSelect: (key:string) => void,
+    onContextMenu?:(key:string, clientX:number, clientY:number) => void,
+    onDoubleClick?:(key:string) => void
   }
 ) => {
   const [expanded, setExpanded] = useState(props.expanded != null ? props.expanded : true);
@@ -65,6 +76,13 @@ export const SubTree = (
         onExpand={v => setExpanded(v)}
         selected={props.selected === props.tree.key}
         onClick={() => props.onSelect(props.tree.key)}
+        onContextMenu={(x,y) => {
+          if(props.onContextMenu) {
+            console.log("Inside subtree")
+          }
+          props.onContextMenu ? props.onContextMenu(props.tree.key, x, y) : null
+        }}
+        onDoubleClick={() => props.onDoubleClick ? props.onDoubleClick(props.tree.key) : null}
       />
       {props.tree.children ?
         <div style={{display: expanded ? "block" : "none"}}>
@@ -75,6 +93,8 @@ export const SubTree = (
               selected={props.selected}
               expanded={childTree.expanded}
               onSelect={(v) => props.onSelect(v)}
+              onContextMenu={props.onContextMenu}
+              onDoubleClick={props.onDoubleClick}
             />
           ))}
         </div>
@@ -83,19 +103,33 @@ export const SubTree = (
   )
 }
 
-export const TreePane = (props:{data:TreePaneData[]}) => {
+export type TreePaneProps = {
+  data: TreePaneData[],
+  onContextMenu?:(key:string, clientX:number, clientY:number) => void,
+  onDoubleClick?:(key:string) => void
+}
+
+export const TreePane = (props:TreePaneProps) => {
   const [selected, setSelected] = useState('');
 
   return (
     <div className="treepane">
   
-      {props.data.map((tree, index) => (
+      {props.data.map((tree, _) => (
         <SubTree 
           key={`tree-${tree.key}`} 
-          tree={tree} depth={0}
+          tree={tree} 
+          depth={0}
           selected={selected}
           expanded={tree.expanded}
           onSelect={(v) => setSelected(v)}
+          onContextMenu={(key, x, y) => {
+            if(props.onContextMenu) {
+              setSelected(key)
+              props.onContextMenu(key, x, y)
+            }
+          }}
+          onDoubleClick={props.onDoubleClick}
         />
       ))}
   

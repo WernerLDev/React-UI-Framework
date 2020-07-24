@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { MenubarItem } from '../menubar/menubar';
 import { Menu } from '../menubar/menu';
+import { MenuItem } from '../../global/types';
 
 export interface IContextMenuProps {
-    items: MenubarItem[],
+    items: MenuItem[],
     position: { left: number, top: number },
     onClose: () => void
 }

@@ -4,20 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Pane } from "../../layouts";
 
 import "./menubar.scss";
-import { MenuBarButton } from "./menubarbutton";
+import { MenuBarItem } from "./menubaritem";
+import { MenuItem } from "../../global/types";
 
-export type MenubarItem = {
-  icon: IconProp;
-  label?: string;
-  disabled?: boolean;
-  submenu?: MenubarItem[];
-  onClick: () => void;
-};
 
 export interface IMenubarProps {
   direction: "horizontal" | "vertical";
   size: "small" | "big";
-  items: MenubarItem[];
+  items: MenuItem[];
 }
 
 export const Menubar = ({ direction, size, items }: IMenubarProps) => {
@@ -37,7 +31,7 @@ export const Menubar = ({ direction, size, items }: IMenubarProps) => {
         }}
       >
         {items.map((item, index) => (
-          <MenuBarButton
+          <MenuBarItem
             key={`menuitem${index}`}
             direction={direction}
             size={size}

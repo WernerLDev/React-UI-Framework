@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { MenubarItem } from './menubar';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Menu } from './menu';
+import { MenuItem } from '../../global/types';
 
 export interface IMenuButtonProps {
-    item: MenubarItem;
+    item: MenuItem;
 }
 
 export const MenuButton = ({item}:IMenuButtonProps) => {
@@ -14,7 +14,9 @@ export const MenuButton = ({item}:IMenuButtonProps) => {
     const [timeclosed, setTimeclosed] = useState(0)
 
     return (
-        <div className="button-container">
+      <>
+        {item.kind == "action" ?
+          <div className="button-container">
             <button
               onClick={() => {
                 if(item.submenu) {
@@ -50,6 +52,14 @@ export const MenuButton = ({item}:IMenuButtonProps) => {
                 />
               </div>
             }
-        </div>
+          </div>
+        : item.kind == "divider" ?
+            <div className="divider">
+              <hr />
+            </div>
+        :  null 
+        }
+        
+      </>
     )
 }

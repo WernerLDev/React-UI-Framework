@@ -1,14 +1,14 @@
 import * as React from "react";
-import { MenubarItem } from "./menubar";
 import { ClickOutside } from "../../layouts/clickoutside/clickoutside";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 import './menu.scss'
 import { MenuButton } from "./menubutton";
+import { MenuItem } from "../../global/types";
 
 export interface IMenuProps {
-  items: MenubarItem[];
+  items: MenuItem[];
   onClose: () => void;
 }
 

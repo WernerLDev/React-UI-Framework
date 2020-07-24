@@ -1,3 +1,5 @@
+@import '../../global/colors.scss';
+
 .menubar {
     padding: 5px;
     box-sizing: border-box;
@@ -26,9 +28,9 @@
             display: flex;
             width: auto;
             
-            background: #12a6ce;
+            background: $copper-red;
             border: 0;
-            border-right: 1px solid #57b7d1;
+            border-right: 1px solid #8BA8C0;
             padding: 0 8px;
             margin: 0 5px 0 0;
             font-size: 1.4em;
@@ -66,8 +68,8 @@
         }
 
         button.active {
-            border-left: 4px solid #d7ecef;
-            background: #57b7d1;
+            border-left: 4px solid $tuscan-red;;
+            background: $tuscan-red;
         }
 
         button.disabled {
@@ -76,7 +78,7 @@
     
         button:not(.disabled):hover {
             cursor: pointer;
-            background: #57b7d1;
+            background: $tuscan-red;
         }
 
     }

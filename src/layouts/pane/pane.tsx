@@ -18,9 +18,9 @@ export const Pane = (
         minHeight: props.height ? `${props.height}px` : undefined,
         flexGrow: props.width == null && props.height == null ? 1 : undefined,
         alignSelf: props.width == null && props.height == null ? 'stretch' : undefined,
-        background: props.background,
-        borderBottom: props.height ? "1px solid #c9c9c9" : undefined,
-        borderRight: props.width ? "1px solid #c9c9c9" : undefined,
+        background: props.background ? props.background : "#DBE0E9",
+        borderBottom: props.height ? "1px solid #C6CDDB" : undefined,
+        borderRight: props.width ? "1px solid #C6CDDB" : undefined,
         overflow: props.overflow ?? "hidden",
         padding: props.padding ? `${props.padding}.px` : undefined
     }
@@ -30,3 +30,4 @@ export const Pane = (
         </div>
     )
 }
+

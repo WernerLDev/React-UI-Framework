@@ -27,7 +27,6 @@ export const Menubar = ({ direction, size, items }: IMenubarProps) => {
   return (
     <Pane 
       height={direction == "horizontal" ? height : undefined} 
-      background="#d7ecef" 
       className="menubar" 
       overflow="initial"
     >

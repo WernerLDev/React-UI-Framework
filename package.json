@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "tsc && npm run copycss",
-    "copycss": "copyfiles -u 1 src/**/*.scss dist/",
+    "copycss": "copyfiles -u 1 -V \"./src/**/*.scss\" dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [

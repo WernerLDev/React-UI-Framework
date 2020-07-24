@@ -34,7 +34,7 @@ export const TreeRow = (
     <div className="caret">
       {props.hasChildren && 
         <button onClick={() => props.onExpand(!props.expanded) }>
-        <FontAwesomeIcon color="#a9a9a9" icon={props.expanded ? faCaretSquareDown : faCaretSquareRight} />
+        <FontAwesomeIcon color="#212d40ff" icon={props.expanded ? faCaretSquareDown : faCaretSquareRight} />
         </button>
       }
     </div> 

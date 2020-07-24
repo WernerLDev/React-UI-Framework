@@ -1,9 +1,10 @@
 import * as React from 'react';
-
-import "./sidemenu.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { useState } from 'react';
+
+import './sidemenu.scss'
+
 
 export type SideMenuItem = {
   label: string,

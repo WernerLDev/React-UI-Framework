@@ -24,6 +24,7 @@ export const MenuButton = ({item}:IMenuButtonProps) => {
                 }
                 else item.onClick()
               }}
+              className={`${item.submenu && submenuopen ? 'active' : ''}`}
             >
               <span className="icon">
                 <FontAwesomeIcon color="#57b7d1" size="1x" icon={item.icon} />

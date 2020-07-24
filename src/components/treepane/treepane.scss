@@ -1,3 +1,4 @@
+@import '../../global/colors.scss';
 
 .treepane {
   flex-grow: 1;
@@ -36,11 +37,11 @@
   }
 
   .treeitem:hover {
-    background: #eef7f8;  
+    background: #E6E9EF;  
   }
 
   .treeitem.selected {
-    background: #d7ecef;
+    background: #A9B4C9;
   }
 
 }

@@ -1,6 +1,7 @@
+@import '../../global/colors.scss';
 
 .menu-container {
-    border: 1px solid #c9c9c9;
+    border: 1px solid #DBE0E9;
     border-radius: 3px;
     -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.18);
     -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.18);
@@ -13,8 +14,8 @@
     
         .submenu {
             position: absolute;
-            top: 2px;
-            left: 99%;
+            top: 4px;
+            left: 98%;
             z-index: 999;
             width: 200px;
             height: auto;
@@ -50,7 +51,7 @@
                 display: block;
                 flex-grow: 1;
                 margin: 0 2px 0 10px;
-                font-size: 0.6em;
+                font-size: 13px;
                 color: #000;
                 line-height: 30px;
                 text-align: left;
@@ -59,7 +60,16 @@
     
         button:not(.disabled):hover {
             cursor: pointer;
-            background: #d7ecef;
+            background: #E6E9EF;
+        }
+
+        button.active, button.active:hover {
+            border-left: 4px solid $tuscan-red;
+            background: #A9B4C9;
+            span.icon, svg {
+                color: #FFF;
+            }
+
         }
     }   
 }

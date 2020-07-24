@@ -3,9 +3,9 @@
 .menu-container {
     border: 1px solid #DBE0E9;
     border-radius: 3px;
-    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.18);
-    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.18);
-    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.18);
+    -webkit-box-shadow: 2px 1px 8px 1px rgba(0,0,0,0.34);
+    -moz-box-shadow: 2px 1px 8px 1px rgba(0,0,0,0.34);
+    box-shadow: 2px 1px 8px 1px rgba(0,0,0,0.34);
 
     width: 200px;
 
@@ -68,7 +68,7 @@
             background: #A9B4C9;
             
             svg.caret {
-                color: #FFF;
+                color: #000;
             }
 
         }

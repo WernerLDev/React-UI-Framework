@@ -27,11 +27,12 @@ export const MenuButton = ({item}:IMenuButtonProps) => {
               className={`${item.submenu && submenuopen ? 'active' : ''}`}
             >
               <span className="icon">
-                <FontAwesomeIcon color="#57b7d1" size="1x" icon={item.icon} />
+                <FontAwesomeIcon color="#364156ff" size="1x" icon={item.icon} />
               </span>
               {item.label && <span>{item.label}</span>}
               {item.submenu && (
                 <FontAwesomeIcon
+                  className="caret"
                   color="#a9a9a9"
                   size="xs"
                   icon="caret-right"

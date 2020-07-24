@@ -112,6 +112,7 @@ export class DataGrid<T> extends React.Component<IDataGridProps<T>, IDataGridSta
             <FontAwesomeIcon 
               icon={sort.direction == "asc" ? "sort-down" : "sort-up"}
               style={{paddingLeft: '5px'}}
+              color="#FFF"
             />
           </a>
         :
@@ -129,7 +130,7 @@ export class DataGrid<T> extends React.Component<IDataGridProps<T>, IDataGridSta
           >
             <FontAwesomeIcon
               icon="sort"
-              color="gray"
+              color="#FFF"
               style={{paddingLeft: '5px'}}
             />
           </a>
@@ -167,7 +168,7 @@ export class DataGrid<T> extends React.Component<IDataGridProps<T>, IDataGridSta
                   <FontAwesomeIcon
                     icon="filter"
                     size="sm"
-                    color="gray"
+                    color="#FFF"
                     style={{position: "absolute", top: "14px", right: "10px"}}
                   />
                 }

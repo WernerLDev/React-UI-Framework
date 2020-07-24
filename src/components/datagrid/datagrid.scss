@@ -1,3 +1,5 @@
+@import '../../global/colors.scss';
+
 $color1: rgba(13, 31, 45, 1);
 $color2: rgba(196, 187, 184, 1);
 $color3: rgba(245, 176, 203, 1);
@@ -5,8 +7,9 @@ $color4: rgba(220, 106, 207, 1);
 $color5: rgba(116, 92, 151, 1);
 
 
-$headerColor: #e9eff1;
-$selectedColor: #d7ecef;
+/*$headerColor: #e9eff1; */
+$headerColor: $charcoal;
+$selectedColor: #A9B4C9;
 $borderDark: #c9c9c9;
 $borderLight: #d7ecef;
 
@@ -26,7 +29,7 @@ $borderLight: #d7ecef;
     left: 0; right: 0; bottom: 0;
     height: 30px;
     padding: 10px 0;
-    background: $headerColor;
+    background: #DBE0E9;
     border-top: 1px solid $borderDark;
 
 
@@ -61,7 +64,7 @@ $borderLight: #d7ecef;
       line-height: 25px;
     }
 
-    .datagrid--cell:nth-child(even):not(.datagrid--row-selected) {
+    .datagrid--cell:nth-child(even):not(.datagrid--row-selected):not(.datagrid--left) {
       background: #efefef;
     }
 
@@ -95,6 +98,7 @@ $borderLight: #d7ecef;
     overflow: hidden; 
     white-space: nowrap;
     line-height: 30px;
+    color: #FFF;
   }
 
   .datagrid--left {
@@ -132,7 +136,7 @@ $borderLight: #d7ecef;
 
 .datagrid--left {
   width: 40px;
-  background: $headerColor;
+  background: #BBC8DC;
   text-align: center;
   border-right: 1px solid $borderDark;
   border-bottom: 1px solid $borderDark;

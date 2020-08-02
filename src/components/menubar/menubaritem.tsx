@@ -15,6 +15,7 @@ export const MenuBarItem = ({
   item,
 }: IMenuBarItemProps) => {
   const [submenuVisible, setSubmenuvisible] = React.useState(false);
+  const [timeclosed, setTimeclosed] = React.useState(0)
 
   return (
     <>
@@ -23,9 +24,9 @@ export const MenuBarItem = ({
         <button
           className={`menubar-btn ${size} ${item.disabled ? "disabled" : ""}`}
           onClick={() => {
-            if (item.submenu) {
+            if (item.submenu && (Date.now() - timeclosed) > 300) {
               setSubmenuvisible(!submenuVisible);
-            } else {
+            } else if(item.submenu == null) {
               item.onClick();
             }
           }}
@@ -44,7 +45,10 @@ export const MenuBarItem = ({
           <div className="submenu-container">
             <Menu
               items={item.submenu ?? []}
-              onClose={() => setSubmenuvisible(false)}
+              onClose={() => {
+                setTimeclosed(Date.now())
+                setSubmenuvisible(false)
+              }}
             />
           </div>
         )}

@@ -6,8 +6,12 @@
 
     div.menubar-container {
         display: flex;
-        //border: 1px solid #fff;
-        //background: #cce1e4;
+        
+        .divider {
+            width: 1px;
+            background: $prussian-blue;
+            margin: 0 5px 0 0;
+        }
 
         .button-wrapper {
             display: flex;
@@ -94,6 +98,13 @@
                 text-align: left;
                 flex-grow: 1;
             }
+        }
+
+        .divider {
+            height: 1px;
+            width: 100%;
+            background: $prussian-blue;
+            margin: 0 0 5px 0;
         }
 
         .button-wrapper {

@@ -12,9 +12,10 @@ export interface IMenubarProps {
   direction: "horizontal" | "vertical";
   size: "small" | "big";
   items: MenuItem[];
+  background?: string
 }
 
-export const Menubar = ({ direction, size, items }: IMenubarProps) => {
+export const Menubar = ({ direction, size, items, background }: IMenubarProps) => {
   const height: number =
     size == "small" ? 50 : size == "big" ? 70 : 50;
 
@@ -23,6 +24,7 @@ export const Menubar = ({ direction, size, items }: IMenubarProps) => {
       height={direction == "horizontal" ? height : undefined} 
       className="menubar" 
       overflow="initial"
+      background={background ?? undefined}
     >
       <div 
         className={`menubar-container menubar-${direction}`}

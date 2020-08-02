@@ -1,6 +1,5 @@
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ClickOutside } from "../../layouts/clickoutside/clickoutside";
 import { Menu } from "./menu";
 import { MenuItem } from "../../global/types";
 
@@ -50,6 +49,16 @@ export const MenuBarItem = ({
           </div>
         )}
       </div>
+      :  item.kind == "element" ?
+          item.element
+      : item.kind == "divider" ?
+          <>
+            {direction == "horizontal" ? 
+              <div className="divider horizontal"></div>
+            :
+              <div className="divider vertical"></div>
+            }
+          </>
       : null }
       
     </>

@@ -11,6 +11,11 @@ export const Pane = (
         children:React.ReactNode
     }
 ) => {
+    const background = 
+        props.background && props.background != "none" ? props.background
+        : props.background && props.background == "none" ? undefined
+        : "#DBE0E9"
+
     const style: React.CSSProperties = {
         width: props.width ? `${props.width}px` : undefined,
         height: props.height ? `${props.height}px` : undefined,
@@ -18,7 +23,7 @@ export const Pane = (
         minHeight: props.height ? `${props.height}px` : undefined,
         flexGrow: props.width == null && props.height == null ? 1 : undefined,
         alignSelf: props.width == null && props.height == null ? 'stretch' : undefined,
-        background: props.background ? props.background : "#DBE0E9",
+        background: background,
         borderBottom: props.height ? "1px solid #C6CDDB" : undefined,
         borderRight: props.width ? "1px solid #C6CDDB" : undefined,
         overflow: props.overflow ?? "hidden",

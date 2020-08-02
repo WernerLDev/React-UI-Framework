@@ -23,32 +23,6 @@ $borderLight: #d7ecef;
   padding-top: 30px;
 
 
-  .datagrid--footer {
-    display: flex;
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    height: 30px;
-    padding: 10px 0;
-    background: #DBE0E9;
-    border-top: 1px solid $borderDark;
-
-
-    span {
-      display: inline-block;
-      height: 30px;
-
-      vertical-align: 0.030em;
-    }
-
-    .divider {
-      background: $borderDark;
-      margin: 0 15px;
-      width: 2px;
-      height: 30px;
-    }
-  }
-
-
   .datagrid--column {
     
 
@@ -111,7 +85,7 @@ $borderLight: #d7ecef;
 .datagrid .datagrid--body {
   display: flex;
   position: absolute;
-  top: 40px; left: 0; right: 0; bottom: 50px;
+  top: 40px; left: 0; right: 0; bottom: 0;
   overflow-y: scroll;
 }
 

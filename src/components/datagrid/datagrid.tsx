@@ -21,7 +21,6 @@ export interface IDataGridProps<T> {
   onSort: (_:DataSort<T>) => void,
   selectedRow: number,
   columns: DataColumn<T>[],
-  footer?:JSX.Element
 }
 
 export interface IDataGridState {
@@ -218,12 +217,6 @@ export class DataGrid<T> extends React.Component<IDataGridProps<T>, IDataGridSta
             )
           })}
         </div>
-
-        {this.props.footer && 
-          <div className="datagrid--footer">
-            {this.props.footer}
-          </div>
-        }
       </div>
     );
   }

@@ -6,6 +6,7 @@
 
     div.menubar-container {
         display: flex;
+        overflow: hidden;
         
         .divider {
             width: 1px;

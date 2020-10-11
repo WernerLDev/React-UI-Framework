@@ -31,68 +31,63 @@
                 height: auto;
             }
 
-        }
-
-        button {
-            width: auto;
-            border-radius: 5px;
-            box-sizing: border-box;
-            background: none;
-            border: 0px;
-            padding: 0 8px;
-            margin: 5px 0;
-            font-size: 1.4em;
-            user-select: none;
-            outline:0;
+            button {
+                border-radius: 3px;
+                box-sizing: border-box;
+                background: none;
+                border: 0px;
+                padding: 0 8px;
+                margin: 5px 1px;
+                font-size: 1.4em;
+                user-select: none;
+                outline:0;
+        
+                .svg-inline--fa {
+                  
+                    margin: 0 3px;
+                }
+            
+                span {
+                  display: block;
+                  margin: 0 2px 0 10px;
+                  font-size: 0.6em;
+                  color: #364156ff;
+                }
+            }
     
-            .svg-inline--fa {
-              
-                margin: 0 3px;
+            button.display-flex {
+                display: flex;
+            }
+    
+            button.small {
+                height: 40px;
+                line-height: 40px;
+                min-width: 40px;
+                .svg-inline--fa { 
+                    height: 40px;
+                }
+            }
+    
+            button.big {
+                height: 60px;
+                line-height: 60px;
+                min-width: 60px;
+                padding: 0 15px;
+                .svg-inline--fa { 
+                    height: 60px;
+                }
+            }
+    
+            button.disabled {
+                opacity: 0.4;
             }
         
-            span {
-              display: block;
-              margin: 0 2px 0 10px;
-              font-size: 0.6em;
-              color: #364156ff;
+            > button:not(.disabled):hover {
+                cursor: pointer;
+                background: rgb(150, 160, 179);
             }
         }
 
-        button.display-flex {
-            display: flex;
-        }
-
-        button.small {
-            height: 40px;
-            line-height: 40px;
-            min-width: 40px;
-            .svg-inline--fa { 
-                height: 40px;
-            }
-        }
-
-        button.big {
-            height: 60px;
-            line-height: 60px;
-            min-width: 60px;
-            padding: 0 15px;
-            .svg-inline--fa { 
-                height: 60px;
-            }
-        }
-
-        button.active {
-            background: $tuscan-red;
-        }
-
-        button.disabled {
-            opacity: 0.4;
-        }
-    
-        button:not(.disabled):hover {
-            cursor: pointer;
-            background: rgb(150, 160, 179);
-        }
 
     }
 

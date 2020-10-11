@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ButtonBar } from '../buttonbar/buttonbar';
 import "./pagination.scss"
-import { Menubar } from '../menubar/menubar';
 
 
 export interface IPaginationProps {
@@ -14,7 +13,7 @@ export interface IPaginationProps {
 
 export const Pagination = (props:IPaginationProps) => (
   <div className="pagination-container">
-    <Menubar 
+    <ButtonBar 
       direction="horizontal"
       size="small"
       items={[

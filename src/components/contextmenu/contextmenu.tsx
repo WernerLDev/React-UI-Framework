@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Menu } from '../menubar/menu';
+import { Menu } from '../menu/menu';
 import { MenuItem } from '../../global/types';
 
 export interface IContextMenuProps {

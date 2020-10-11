@@ -1,19 +1,19 @@
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Menu } from "./menu";
 import { MenuItem } from "../../global/types";
+import { Menu } from "../menu/menu";
 
-export interface IMenuBarItemProps {
+export interface IButtonBarItemProps {
   size: "small" | "big";
   direction: "horizontal" | "vertical";
   item: MenuItem;
 }
 
-export const MenuBarItem = ({
+export const ButtonBarItem = ({
   size,
   direction,
   item,
-}: IMenuBarItemProps) => {
+}: IButtonBarItemProps) => {
   const [submenuVisible, setSubmenuvisible] = React.useState(false);
   const [timeclosed, setTimeclosed] = React.useState(0)
 

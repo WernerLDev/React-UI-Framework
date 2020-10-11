@@ -1,21 +1,18 @@
 import * as React from "react";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Pane } from "../../layouts";
-
-import "./menubar.scss";
-import { MenuBarItem } from "./menubaritem";
 import { MenuItem } from "../../global/types";
+import { ButtonBarItem } from "./buttonbar-item";
 
+import "./buttonbar.scss";
 
-export interface IMenubarProps {
+export interface IButtonBarProps {
   direction: "horizontal" | "vertical";
   size: "small" | "big";
   items: MenuItem[];
   background?: string
 }
 
-export const Menubar = ({ direction, size, items, background }: IMenubarProps) => {
+export const ButtonBar = ({ direction, size, items, background }: IButtonBarProps) => {
   const height: number =
     size == "small" ? 50 : size == "big" ? 70 : 50;
 
@@ -33,7 +30,7 @@ export const Menubar = ({ direction, size, items, background }: IMenubarProps) =
         }}
       >
         {items.map((item, index) => (
-          <MenuBarItem
+          <ButtonBarItem
             key={`menuitem${index}`}
             direction={direction}
             size={size}

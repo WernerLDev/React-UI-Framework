@@ -7,15 +7,22 @@ import "./buttonbar.scss";
 
 export interface IButtonBarProps {
   direction: "horizontal" | "vertical";
+  reversed?: boolean;
   size: "small" | "big";
   items: MenuItem[];
   background?: string
 }
 
-export const ButtonBar = ({ direction, size, items, background }: IButtonBarProps) => {
+export const ButtonBar = ({ direction, reversed, size, items, background }: IButtonBarProps) => {
   const height: number =
     size == "small" ? 50 : size == "big" ? 70 : 50;
 
+  const flexDirection: "row" | "column" | "row-reverse" | "column-reverse" = 
+    direction == "horizontal" && !reversed ? "row"
+    : direction == "horizontal" && reversed ? "row-reverse"
+    : direction == "vertical" && !reversed ? "column"
+    : "column-reverse"
+  
   return (
     <Pane 
       height={direction == "horizontal" ? height : undefined} 
@@ -26,7 +33,7 @@ export const ButtonBar = ({ direction, size, items, background }: IButtonBarProp
       <div 
         className={`menubar-container menubar-${direction}`}
         style={{
-          flexDirection: direction == "horizontal" ? "row" : "column"
+          flexDirection: flexDirection
         }}
       >
         {items.map((item, index) => (

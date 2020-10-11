@@ -21,49 +21,49 @@ export const MenuBarItem = ({
     <>
       {item.kind == "action" ?
         <div className="button-wrapper">
-        <button
-          className={`menubar-btn ${size} ${item.disabled ? "disabled" : ""}`}
-          onClick={() => {
-            if (item.submenu && (Date.now() - timeclosed) > 300) {
-              setSubmenuvisible(!submenuVisible);
-            } else if(item.submenu == null) {
-              item.onClick();
-            }
-          }}
-        >
-          <FontAwesomeIcon color="#d7ecef" size="xs" icon={item.icon} />
-          {item.label && <span>{item.label}</span>}
-          {item.submenu && (
-            <FontAwesomeIcon
-              color="#d7ecef"
-              size="xs"
-              icon={direction == "horizontal" ? "caret-down" : "caret-right"}
-            />
+          <button
+            className={`menubar-btn ${size} ${item.disabled ? "disabled" : ""} ${submenuVisible ? "active" : ""}`}
+            onClick={() => {
+              if (item.submenu && (Date.now() - timeclosed) > 300) {
+                setSubmenuvisible(!submenuVisible);
+              } else if(item.submenu == null) {
+                item.onClick();
+              }
+            }}
+          >
+            <FontAwesomeIcon color="#364156ff" size="xs" icon={item.icon} />
+            {item.label && <span>{item.label}</span>}
+            {item.submenu && (
+              <FontAwesomeIcon
+                color="#364156ff"
+                size="xs"
+                icon={direction == "horizontal" ? "caret-down" : "caret-right"}
+              />
+            )}
+          </button>
+          {submenuVisible && (
+            <div className="submenu-container">
+              <Menu
+                items={item.submenu ?? []}
+                onClose={() => {
+                  setTimeclosed(Date.now())
+                  setSubmenuvisible(false)
+                }}
+              />
+            </div>
           )}
-        </button>
-        {submenuVisible && (
-          <div className="submenu-container">
-            <Menu
-              items={item.submenu ?? []}
-              onClose={() => {
-                setTimeclosed(Date.now())
-                setSubmenuvisible(false)
-              }}
-            />
-          </div>
-        )}
-      </div>
-      :  item.kind == "element" ?
-          item.element
-      : item.kind == "divider" ?
-          <>
-            {direction == "horizontal" ? 
-              <div className="divider horizontal"></div>
-            :
-              <div className="divider vertical"></div>
-            }
-          </>
-      : null }
+        </div>
+        :  item.kind == "element" ?
+            item.element
+        : item.kind == "divider" ?
+            <>
+              {direction == "horizontal" ? 
+                <div className="divider horizontal"></div>
+              :
+                <div className="divider vertical"></div>
+              }
+            </>
+        : null }
       
     </>
   );

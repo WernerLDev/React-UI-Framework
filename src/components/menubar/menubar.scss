@@ -1,7 +1,7 @@
 @import '../../global/colors.scss';
 
 .menubar {
-    padding: 5px;
+    padding: 0px;
     box-sizing: border-box;
 
     div.menubar-container {
@@ -9,13 +9,18 @@
         
         .divider {
             width: 1px;
-            background: $prussian-blue;
-            margin: 0 5px 0 0;
+            opacity: 0.6;
+            background: #364156ff;
+            margin: 3px 5px;
         }
 
         .button-wrapper {
             display: flex;
             position: relative;
+
+            button.active {
+                background: rgb(150, 160, 179);
+            }
 
             .submenu-container {
                 position: absolute;
@@ -31,12 +36,12 @@
         button {
             display: flex;
             width: auto;
-            
-            background: $copper-red;
-            border: 0;
-            border-right: 1px solid #8BA8C0;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background: none;
+            border: 0px;
             padding: 0 8px;
-            margin: 0 5px 0 0;
+            margin: 5px;
             font-size: 1.4em;
             user-select: none;
             outline:0;
@@ -50,7 +55,7 @@
               display: block;
               margin: 0 2px 0 10px;
               font-size: 0.6em;
-              color: #fff;
+              color: #364156ff;
             }
         }
 
@@ -74,7 +79,6 @@
         }
 
         button.active {
-            border-left: 4px solid $tuscan-red;;
             background: $tuscan-red;
         }
 
@@ -84,7 +88,7 @@
     
         button:not(.disabled):hover {
             cursor: pointer;
-            background: $tuscan-red;
+            background: rgb(150, 160, 179);
         }
 
     }
@@ -103,8 +107,8 @@
         .divider {
             height: 1px;
             width: 100%;
-            background: $prussian-blue;
-            margin: 0 0 5px 0;
+            background: #364156ff;
+            margin: 0 5px;
         }
 
         .button-wrapper {
@@ -123,4 +127,3 @@
 
     }
 }
-

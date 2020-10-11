@@ -24,8 +24,8 @@ export const Pane = (
         flexGrow: props.width == null && props.height == null ? 1 : undefined,
         alignSelf: props.width == null && props.height == null ? 'stretch' : undefined,
         background: background,
-        borderBottom: props.height ? "1px solid #C6CDDB" : undefined,
-        borderRight: props.width ? "1px solid #C6CDDB" : undefined,
+        // borderBottom: props.height ? "1px solid #C6CDDB" : undefined,
+        // borderRight: props.width ? "1px solid #C6CDDB" : undefined,
         overflow: props.overflow ?? "hidden",
         padding: props.padding ? `${props.padding}.px` : undefined
     }

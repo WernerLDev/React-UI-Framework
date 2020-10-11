@@ -11,6 +11,7 @@ $borderLight: #d7ecef;
     margin: 0 10px;
     height: 40px;
     line-height: 40px;
+    font-size: 0.8em;
   }
 
   input, select {
@@ -23,9 +24,9 @@ $borderLight: #d7ecef;
     text-align: center;
   }
 
-  div.divider {
-    height: auto;
-    margin: 0 15px 0 10px!important;
+  .pagination-section {
+    height: 50px;
+    line-height: 50px;
   }
 
 }

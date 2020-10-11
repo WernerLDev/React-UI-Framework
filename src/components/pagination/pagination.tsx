@@ -34,8 +34,7 @@ export const Pagination = (props:IPaginationProps) => (
         },
         {
           kind: "element",
-          element: <>
-            <span>Page</span> 
+          element: <div className="pagination-section">
             <input 
               type="text" 
               value={props.page + 1}
@@ -50,7 +49,7 @@ export const Pagination = (props:IPaginationProps) => (
               }}
             />
             <span>of {props.totalPages}</span>
-          </>
+          </div>
         },
         {
           kind: "action",
@@ -71,7 +70,7 @@ export const Pagination = (props:IPaginationProps) => (
         },
         {
           kind: "element",
-          element: <>
+          element: <div className="pagination-section">
             <select 
               value={props.pageSize}
               onChange={(e) => {
@@ -84,7 +83,7 @@ export const Pagination = (props:IPaginationProps) => (
               <option>100</option>
             </select>
             <span>Per page</span>
-          </>
+          </div>
         }
       ]}
     />

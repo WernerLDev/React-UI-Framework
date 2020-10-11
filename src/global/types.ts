@@ -9,7 +9,7 @@ export type Paginated<T> = {
 
 export type MenuItem = {
     kind: "action";
-    icon: IconProp;
+    icon?: IconProp;
     label?: string;
     disabled?: boolean;
     submenu?: MenuItem[];

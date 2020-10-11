@@ -31,7 +31,7 @@ export const ButtonBarItem = ({
               }
             }}
           >
-            <FontAwesomeIcon color="#364156ff" size="xs" icon={item.icon} />
+            {item.icon && <FontAwesomeIcon color="#364156ff" size="xs" icon={item.icon} /> }
             {item.label && <span>{item.label}</span>}
             {item.submenu && (
               <FontAwesomeIcon

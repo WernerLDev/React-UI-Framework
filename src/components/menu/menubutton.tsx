@@ -26,7 +26,7 @@ export const MenuButton = ({item}:IMenuButtonProps) => {
                 }
                 else item.onClick()
               }}
-              className={`${item.submenu && submenuopen ? 'active' : ''}`}
+              className={`menubutton ${item.submenu && submenuopen ? 'active' : ''}`}
             >
               {item.icon &&
                 <span className="icon">

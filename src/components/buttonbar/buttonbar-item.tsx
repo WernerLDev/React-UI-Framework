@@ -22,7 +22,7 @@ export const ButtonBarItem = ({
       {item.kind == "action" ?
         <div className="button-wrapper">
           <button
-            className={`menubar-btn ${size} ${item.label || item.submenu ? 'display-flex' : ''} ${item.disabled ? "disabled" : ""} ${submenuVisible ? "active" : ""}`}
+            className={`buttonbarbutton ${size} ${item.label || item.submenu ? 'display-flex' : ''} ${item.disabled ? "disabled" : ""} ${submenuVisible ? "active" : ""}`}
             onClick={() => {
               if (item.submenu && (Date.now() - timeclosed) > 300) {
                 setSubmenuvisible(!submenuVisible);
